@@ -1,7 +1,7 @@
 import yaml, random
 from difflib import get_close_matches
 
-filepath = "data/train_ambignq_light.yaml"
+filepath = "data/train_ambignq.yaml"
 file = open(filepath, "r")
 
 knowledge = yaml.load(file)
@@ -19,7 +19,7 @@ while True:
 
     # chatbot response generator
 
-    found = get_close_matches(inp, knowledge_input, n=1, cutoff=0.6)
+    found = get_close_matches(inp, knowledge_input, n=1, cutoff=0.8)
     
     if found == []:
         match = None
