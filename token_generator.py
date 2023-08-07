@@ -9,11 +9,12 @@ word_files = ["raw data/words_base.txt", "raw data/words_en.txt", "raw data/word
 
 
 def process_word_file(filepath):
+    global unique_words
     with open(filepath, "r", encoding='utf-8') as file:
         for line in file.readlines():
             word:str = line.strip().lower()
             unique_words.add(word)
-
+        
             if len(unique_words) % 1000 == 0:
                 print(f'{len(unique_words)}: {word}')
                 
